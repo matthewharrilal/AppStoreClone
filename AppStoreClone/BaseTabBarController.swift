@@ -25,9 +25,9 @@ class BaseTabBarController: UITabBarController {
         let searchNavController = createNavController(fromViewController: SearchAppsCollectionViewController(), withTitle: "Search", withImageName: "search")
 
         super.viewControllers = [
+            searchNavController,
             todayNavController,
-            appsNavController,
-            searchNavController
+            appsNavController
         ]
     }
 
