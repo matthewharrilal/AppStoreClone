@@ -49,7 +49,7 @@ extension UIView {
     
     func fillSuperview(padding: UIEdgeInsets = .zero) {
         // Enables autolayout
-        translatesAutoresizingMaskIntoConstraints = true
+        translatesAutoresizingMaskIntoConstraints = false
         
         if let superviewTopAnchor = superview?.topAnchor {
             // Constrain the top anchor of the view that is currently calling this method
@@ -71,7 +71,7 @@ extension UIView {
     
     func centerInSuperview(withSize size: CGSize = .zero) {
         // Constrains elements to center and constrains the size configurations to the view's superview
-        translatesAutoresizingMaskIntoConstraints = true
+        translatesAutoresizingMaskIntoConstraints = false
         
         if let superviewCenterXAnchor = superview?.centerXAnchor {
             centerXAnchor.constraint(equalTo: superviewCenterXAnchor).isActive = true
@@ -88,5 +88,32 @@ extension UIView {
         if size.height != 0 {
             heightAnchor.constraint(equalToConstant: size.height).isActive = true
         }
+    }
+    
+    func centerXInSuperview(toSuperview superview: UIView?=nil) {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let superviewCenterXAnchor = superview?.centerXAnchor {
+            centerXAnchor.constraint(equalTo: superviewCenterXAnchor).isActive = true
+        }
+    }
+    
+    
+    func centerYInSuperview(toSuperview superview: UIView?=nil) {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let superviewYAnchor = superview?.centerYAnchor {
+            centerYAnchor.constraint(equalTo: superviewYAnchor).isActive = true
+        }
+    }
+    
+    func constrainWidth(withWidth width: CGFloat) {
+        translatesAutoresizingMaskIntoConstraints = false
+        widthAnchor.constraint(equalToConstant: width)
+    }
+    
+    func constrainHeight(withHeight height: CGFloat) {
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalToConstant: height)
     }
 }
