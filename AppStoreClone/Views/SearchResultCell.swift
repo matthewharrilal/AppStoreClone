@@ -14,7 +14,7 @@ class SearchResultCell: UICollectionViewCell {
     let imageView: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = .red
-        
+        view.widthAnchor.constraint(equalToConstant: 60).isActive = true
         return view
     }()
     
@@ -24,11 +24,26 @@ class SearchResultCell: UICollectionViewCell {
         return label
     }()
     
+    let categoryLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Photos & Video"
+        return label
+    }()
+    
+    let ratingsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "9.26m"
+        return label
+    }()
+    
     let getButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("GET", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 24)
+        button.backgroundColor = .darkGray
+        
+        button.widthAnchor.constraint(equalToConstant: 80).isActive = true
         return button
     }()
     
@@ -37,8 +52,14 @@ class SearchResultCell: UICollectionViewCell {
         
         self.backgroundColor = .yellow
         
+        let labelsStackView = UIStackView(arrangedSubviews: [
+                nameLabel, categoryLabel, ratingsLabel
+            ])
+        
+        labelsStackView.axis = .vertical
+        
         let stackView = UIStackView(arrangedSubviews: [
-                imageView, nameLabel, getButton
+                imageView, labelsStackView, getButton
             ])
         
         stackView.spacing = 12
