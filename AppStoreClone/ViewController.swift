@@ -15,21 +15,14 @@ class BaseTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         
         let firstViewController = UIViewController()
-        firstViewController.view.backgroundColor = .white
-        
         let todayNavController = createNavController(fromViewController: firstViewController, withTitle: "Today", withImageName: "today")
 
         
         let secondViewController = UIViewController()
-        secondViewController.view.backgroundColor = .white
-        
         let appsNavController = createNavController(fromViewController: secondViewController, withTitle: "Apps", withImageName: "apps")
 
         
-        let thirdViewController = UIViewController()
-        thirdViewController.view.backgroundColor = .white
-        
-        let searchNavController = createNavController(fromViewController: thirdViewController, withTitle: "Search", withImageName: "search")
+        let searchNavController = createNavController(fromViewController: SearchAppsCollectionViewController(), withTitle: "Search", withImageName: "search")
 
         super.viewControllers = [
             todayNavController,
@@ -41,6 +34,8 @@ class BaseTabBarController: UITabBarController {
     fileprivate func createNavController(fromViewController viewController: UIViewController, withTitle title: String, withImageName imageName: String) -> UINavigationController {
         
         viewController.navigationItem.title = title
+        
+        viewController.view.backgroundColor = .white
         
         let navController = UINavigationController(rootViewController: viewController)
         
