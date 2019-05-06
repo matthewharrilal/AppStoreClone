@@ -15,33 +15,22 @@ class BaseTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         
         let firstViewController = UIViewController()
-        firstViewController.view.backgroundColor = .yellow
+        firstViewController.view.backgroundColor = .white
         
-        let todayNavController = UINavigationController(rootViewController: firstViewController)
-        todayNavController.tabBarItem.title = "Today"
-        todayNavController.navigationBar.prefersLargeTitles = true
-        todayNavController.tabBarItem.image = #imageLiteral(resourceName: "today_icon")
-        firstViewController.navigationItem.title = "Today"
+        let todayNavController = createNavController(fromViewController: firstViewController, withTitle: "Today", withImageName: "today")
+
         
         let secondViewController = UIViewController()
-        secondViewController.view.backgroundColor = .blue
+        secondViewController.view.backgroundColor = .white
         
-        let appsNavController = UINavigationController(rootViewController: secondViewController)
-        appsNavController.tabBarItem.title = "Apps"
-        secondViewController.navigationItem.title = "Apps"
-        appsNavController.navigationBar.prefersLargeTitles = true
-        appsNavController.tabBarItem.image = #imageLiteral(resourceName: "apps")
-        
+        let appsNavController = createNavController(fromViewController: secondViewController, withTitle: "Apps", withImageName: "apps")
+
         
         let thirdViewController = UIViewController()
-        thirdViewController.view.backgroundColor = .red
+        thirdViewController.view.backgroundColor = .white
         
-        let searchNavController = UINavigationController(rootViewController: thirdViewController)
-        searchNavController.tabBarItem.title = "Search"
-        thirdViewController.navigationItem.title = "Search"
-        searchNavController.navigationBar.prefersLargeTitles = true
-        searchNavController.tabBarItem.image = #imageLiteral(resourceName: "search")
-        
+        let searchNavController = createNavController(fromViewController: thirdViewController, withTitle: "Search", withImageName: "search")
+
         super.viewControllers = [
             todayNavController,
             appsNavController,
@@ -49,6 +38,19 @@ class BaseTabBarController: UITabBarController {
         ]
     }
 
-
+    fileprivate func createNavController(fromViewController viewController: UIViewController, withTitle title: String, withImageName imageName: String) -> UINavigationController {
+        
+        viewController.navigationItem.title = title
+        
+        let navController = UINavigationController(rootViewController: viewController)
+        
+        navController.tabBarItem.title = title
+        
+        navController.navigationBar.prefersLargeTitles = true
+        
+        navController.tabBarItem.image = UIImage(imageLiteralResourceName: imageName)
+        
+        return navController
+    }
 }
 
