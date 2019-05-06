@@ -109,11 +109,11 @@ extension UIView {
     
     func constrainWidth(withWidth width: CGFloat) {
         translatesAutoresizingMaskIntoConstraints = false
-        widthAnchor.constraint(equalToConstant: width)
+        widthAnchor.constraint(equalToConstant: width).isActive = true
     }
     
     func constrainHeight(withHeight height: CGFloat) {
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: height)
+        heightAnchor.constraint(equalToConstant: height).isActive = true
     }
 }
