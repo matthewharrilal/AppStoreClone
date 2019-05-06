@@ -11,6 +11,10 @@ import UIKit
 
 class SearchResultCell: UICollectionViewCell {
     
+    lazy var screenshot1 = self.createImageView()
+    lazy var screenshot2 = self.createImageView()
+    lazy var screenshot3 = self.createImageView()
+    
     let appIconImageView: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = .red
@@ -82,6 +86,12 @@ class SearchResultCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func createImageView() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .blue
+        return imageView
     }
 }
 
