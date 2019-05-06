@@ -15,6 +15,7 @@
 		1C83F459227FAD6C00BEA884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C83F457227FAD6C00BEA884 /* LaunchScreen.storyboard */; };
 		1C83F464227FAD6D00BEA884 /* AppStoreCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83F463227FAD6D00BEA884 /* AppStoreCloneTests.swift */; };
 		1C83F470227FBB1E00BEA884 /* SearchAppsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83F46F227FBB1E00BEA884 /* SearchAppsCollectionViewController.swift */; };
+		1C83F473227FBF0800BEA884 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83F472227FBF0800BEA884 /* SearchResultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		1C83F463227FAD6D00BEA884 /* AppStoreCloneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreCloneTests.swift; sourceTree = "<group>"; };
 		1C83F465227FAD6D00BEA884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C83F46F227FBB1E00BEA884 /* SearchAppsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppsCollectionViewController.swift; sourceTree = "<group>"; };
+		1C83F472227FBF0800BEA884 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +83,9 @@
 		1C83F44A227FAD6800BEA884 /* AppStoreClone */ = {
 			isa = PBXGroup;
 			children = (
+				1C83F471227FBEEA00BEA884 /* Views */,
 				1C83F46E227FBB0C00BEA884 /* Controllers */,
 				1C83F44B227FAD6900BEA884 /* AppDelegate.swift */,
-				1C83F44D227FAD6900BEA884 /* BaseTabBarController.swift */,
 				1C83F44F227FAD6900BEA884 /* Main.storyboard */,
 				1C83F455227FAD6C00BEA884 /* Assets.xcassets */,
 				1C83F457227FAD6C00BEA884 /* LaunchScreen.storyboard */,
@@ -106,8 +108,17 @@
 			isa = PBXGroup;
 			children = (
 				1C83F46F227FBB1E00BEA884 /* SearchAppsCollectionViewController.swift */,
+				1C83F44D227FAD6900BEA884 /* BaseTabBarController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1C83F471227FBEEA00BEA884 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C83F472227FBF0800BEA884 /* SearchResultCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +226,7 @@
 				1C83F44E227FAD6900BEA884 /* BaseTabBarController.swift in Sources */,
 				1C83F44C227FAD6900BEA884 /* AppDelegate.swift in Sources */,
 				1C83F454227FAD6900BEA884 /* AppStoreClone.xcdatamodeld in Sources */,
+				1C83F473227FBF0800BEA884 /* SearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
