@@ -11,7 +11,7 @@ import UIKit
 
 class SearchResultCell: UICollectionViewCell {
     
-    let imageView: UIImageView = {
+    let appIconImageView: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = .red
         view.widthAnchor.constraint(equalToConstant: 60).isActive = true
@@ -43,8 +43,11 @@ class SearchResultCell: UICollectionViewCell {
         let button = UIButton(type: .system)
         button.setTitle("GET", for: .normal)
         button.setTitleColor(.blue, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 24)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 20)
         button.backgroundColor = .darkGray
+        
+        button.layer.cornerRadius = 20
+        button.backgroundColor = .lightGray
         
         button.widthAnchor.constraint(equalToConstant: 80).isActive = true
         return button
@@ -62,11 +65,10 @@ class SearchResultCell: UICollectionViewCell {
         labelsStackView.axis = .vertical
         
         let stackView = UIStackView(arrangedSubviews: [
-                imageView, labelsStackView, getButton
+                appIconImageView, labelsStackView, getButton
             ])
         
-        getButton.layer.cornerRadius = 20
-        getButton.backgroundColor = .lightGray
+        
         
         stackView.spacing = 12
         stackView.alignment = .center // Aligns all elements in the stack view in the center
