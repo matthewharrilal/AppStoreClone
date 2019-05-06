@@ -65,6 +65,9 @@ class SearchResultCell: UICollectionViewCell {
                 imageView, labelsStackView, getButton
             ])
         
+        getButton.layer.cornerRadius = 20
+        getButton.backgroundColor = .lightGray
+        
         stackView.spacing = 12
         stackView.alignment = .center // Aligns all elements in the stack view in the center
         addSubview(stackView)
