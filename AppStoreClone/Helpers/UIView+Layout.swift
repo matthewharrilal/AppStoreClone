@@ -11,13 +11,15 @@ import UIKit
 
 
 extension UIView {
-    func anchor(top: NSLayoutYAxisAnchor, leading: NSLayoutXAxisAnchor, bottom: NSLayoutYAxisAnchor, trailing: NSLayoutXAxisAnchor) {
+    func anchor(top: NSLayoutYAxisAnchor, leading: NSLayoutXAxisAnchor, bottom: NSLayoutYAxisAnchor, trailing: NSLayoutXAxisAnchor, padding: UIEdgeInsets = .zero) {
         // Enables auto layout
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        topAnchor.constraint(equalTo: top).isActive = true
-        bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        leadingAnchor.constraint(equalTo: leading).isActive = true
-        trailingAnchor.constraint(equalTo: trailing).isActive = true
+        topAnchor.constraint(equalTo: top, constant: padding.top).isActive = true
+        bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding.bottom).isActive = true
+        leadingAnchor.constraint(equalTo: leading, constant: padding.left).isActive = true
+        trailingAnchor.constraint(equalTo: trailing, constant: -padding.right).isActive = true
+        
+        
     }
 }
