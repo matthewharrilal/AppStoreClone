@@ -69,19 +69,19 @@ class SearchResultCell: UICollectionViewCell {
         
         labelsStackView.axis = .vertical
         
-        let stackView = UIStackView(arrangedSubviews: [
+        let infoStackView = UIStackView(arrangedSubviews: [
                 appIconImageView, labelsStackView, getButton
             ])
         
         
         
-        stackView.spacing = 12
-        stackView.alignment = .center // Aligns all elements in the stack view in the center
-        addSubview(stackView)
+        infoStackView.spacing = 12
+        infoStackView.alignment = .center // Aligns all elements in the stack view in the center
+        addSubview(infoStackView)
         
         let padding = UIEdgeInsets(top: 10, left: 10, bottom: -10, right: -10)
         
-        stackView.fillSuperview(padding: padding)
+        infoStackView.fillSuperview(padding: padding)
     }
     
     required init?(coder aDecoder: NSCoder) {
