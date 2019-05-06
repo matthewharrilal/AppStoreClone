@@ -14,8 +14,8 @@ class SearchResultCell: UICollectionViewCell {
     let appIconImageView: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = .red
-        view.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        view.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        view.constrainWidth(withWidth: 60)
+        view.constrainHeight(withHeight: 60)
         
         view.layer.cornerRadius = 12
         return view
@@ -49,7 +49,8 @@ class SearchResultCell: UICollectionViewCell {
         button.layer.cornerRadius = 20
         button.backgroundColor = .lightGray
         
-        button.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        button.constrainHeight(withHeight: 32)
+        button.constrainWidth(withWidth: 80)
         return button
     }()
     
@@ -74,12 +75,9 @@ class SearchResultCell: UICollectionViewCell {
         stackView.alignment = .center // Aligns all elements in the stack view in the center
         addSubview(stackView)
         
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let padding = UIEdgeInsets(top: 10, left: 10, bottom: -10, right: -10)
         
-        stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        stackView.fillSuperview(padding: padding)
     }
     
     required init?(coder aDecoder: NSCoder) {

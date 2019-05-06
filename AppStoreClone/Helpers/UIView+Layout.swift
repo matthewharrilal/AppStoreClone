@@ -61,11 +61,11 @@ extension UIView {
         }
         
         if let superviewTrailingAnchor = superview?.trailingAnchor {
-            trailingAnchor.constraint(equalTo: superviewTrailingAnchor, constant: -padding.right)
+            trailingAnchor.constraint(equalTo: superviewTrailingAnchor, constant: padding.right).isActive = true
         }
         
         if let superviewBottomAnchor = superview?.bottomAnchor {
-            bottomAnchor.constraint(equalTo: superviewBottomAnchor, constant: -padding.bottom)
+            bottomAnchor.constraint(equalTo: superviewBottomAnchor, constant: padding.bottom).isActive = true
         }
     }
     
