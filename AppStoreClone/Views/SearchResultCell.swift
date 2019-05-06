@@ -15,6 +15,9 @@ class SearchResultCell: UICollectionViewCell {
         let view = UIImageView()
         view.backgroundColor = .red
         view.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        view.layer.cornerRadius = 12
         return view
     }()
     
@@ -63,6 +66,7 @@ class SearchResultCell: UICollectionViewCell {
             ])
         
         stackView.spacing = 12
+        stackView.alignment = .center // Aligns all elements in the stack view in the center
         addSubview(stackView)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
