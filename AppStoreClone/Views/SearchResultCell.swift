@@ -72,9 +72,9 @@ class SearchResultCell: UICollectionViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
         stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
