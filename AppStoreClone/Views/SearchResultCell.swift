@@ -77,9 +77,13 @@ class SearchResultCell: UICollectionViewCell {
         
         let padding = UIEdgeInsets(top: 10, left: 10, bottom: -10, right: -10)
         
-        let overallStackView = UIStackView(arrangedSubviews: [
-            infoStackView, screenshot1, screenshot2, screenshot3
-            ])
+        let screenshotsStackView = UIStackView(arrangedSubviews: [screenshot1, screenshot2, screenshot3])
+        screenshotsStackView.axis = .horizontal
+        screenshotsStackView.spacing = 10
+        screenshotsStackView.distribution = .fillEqually
+        
+        let overallStackView = UIStackView(arrangedSubviews: [infoStackView, screenshotsStackView])
+        
         overallStackView.spacing = 10
         overallStackView.axis = .vertical
         
