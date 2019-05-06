@@ -64,24 +64,28 @@ class SearchResultCell: UICollectionViewCell {
         self.backgroundColor = .yellow
         
         let labelsStackView = UIStackView(arrangedSubviews: [
-                nameLabel, categoryLabel, ratingsLabel
+            nameLabel, categoryLabel, ratingsLabel
             ])
         
         labelsStackView.axis = .vertical
         
-        let infoStackView = UIStackView(arrangedSubviews: [
-                appIconImageView, labelsStackView, getButton
-            ])
-        
+        let infoStackView = UIStackView(arrangedSubviews: [appIconImageView, labelsStackView, getButton])
         
         
         infoStackView.spacing = 12
-        infoStackView.alignment = .center // Aligns all elements in the stack view in the center
-        addSubview(infoStackView)
+        infoStackView.alignment = .center
         
         let padding = UIEdgeInsets(top: 10, left: 10, bottom: -10, right: -10)
         
-        infoStackView.fillSuperview(padding: padding)
+        let overallStackView = UIStackView(arrangedSubviews: [
+            infoStackView, screenshot1, screenshot2, screenshot3
+            ])
+        overallStackView.spacing = 10
+        overallStackView.axis = .vertical
+        
+        addSubview(overallStackView)
+        
+        overallStackView.fillSuperview(padding: padding)
     }
     
     required init?(coder aDecoder: NSCoder) {
