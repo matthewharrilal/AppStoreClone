@@ -17,7 +17,7 @@ class SearchAppsCollectionViewController: UICollectionViewController, UICollecti
         
         collectionView.backgroundColor = .white
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: cellId)
     }
     
     init() {
@@ -34,7 +34,6 @@ class SearchAppsCollectionViewController: UICollectionViewController, UICollecti
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .red
         
         return cell
     }
