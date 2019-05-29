@@ -20,7 +20,6 @@ class SearchResultCell: UICollectionViewCell {
         view.backgroundColor = .red
         view.constrainWidth(withWidth: 60)
         view.constrainHeight(withHeight: 60)
-        
         view.layer.cornerRadius = 12
         return view
     }()
@@ -60,11 +59,12 @@ class SearchResultCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.backgroundColor = .yellow
+                
+        let nameView = UIView(frame: nameLabel.frame)
+        nameView.addSubview(nameLabel)
         
         let labelsStackView = UIStackView(arrangedSubviews: [
-            nameLabel, categoryLabel, ratingsLabel
+            nameView, categoryLabel, ratingsLabel
             ])
         
         labelsStackView.axis = .vertical
